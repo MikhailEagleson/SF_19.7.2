@@ -29,8 +29,8 @@ def test_get_all_pets_with_valid_key(filter=''):
     assert len(result['pets']) > 0
 
 
-def test_add_new_pet_with_valid_data(name='Барбоскин', animal_type='двортерьер',
-                                     age='4', pet_photo='images/cat1.jpg'):
+def test_add_new_pet_with_valid_data(name='Комокшерсти', animal_type='терьерскотч',
+                                     age='11', pet_photo='images/cat1.jpg'):
     """Проверяем что можно добавить питомца с корректными данными"""
 
     # Получаем полный путь изображения питомца и сохраняем в переменную pet_photo
@@ -56,7 +56,7 @@ def test_successful_delete_self_pet():
 
     # Проверяем - если список своих питомцев пустой, то добавляем нового и опять запрашиваем список своих питомцев
     if len(my_pets['pets']) == 0:
-        pf.add_new_pet(auth_key, "Суперкот", "кот", "3", "images/cat1.jpg")
+        pf.add_new_pet(auth_key, "Котопес", "собака", "5", "images/cat1.jpg")
         _, my_pets = pf.get_list_of_pets(auth_key, "my_pets")
 
     # Берём id первого питомца из списка и отправляем запрос на удаление
@@ -71,7 +71,7 @@ def test_successful_delete_self_pet():
     assert pet_id not in my_pets.values()
 
 
-def test_successful_update_self_pet_info(name='Мурзик', animal_type='Котэ', age=5):
+def test_successful_update_self_pet_info(name='Матроскин', animal_type='Кошка', age=5):
     """Проверяем возможность обновления информации о питомце"""
 
     # Получаем ключ auth_key и список своих питомцев
@@ -90,8 +90,8 @@ def test_successful_update_self_pet_info(name='Мурзик', animal_type='Ко�
         raise Exception("There is no my pets")
 
 # Новые тесты:
-def test_add_information_about_new_pet_without_photo(name='Тузик', animal_type='дворняга',
-                                     age='3'):
+def test_add_information_about_new_pet_without_photo(name='Жора', animal_type='дворняжка',
+                                     age='30'):
     """Проверяем что можно добавить питомца с корректными данными"""
 
 
@@ -147,8 +147,8 @@ def test_get_all_pets_with_valid_key_negative(filter=''):
     assert len(result['pets']) == 0
 
 
-def test_add_new_pet_with_valid_data_negative(name='?90&', animal_type='!8dfhk',
-                                     age=1456, pet_photo='images/cat1.jpg'):
+def test_add_new_pet_with_valid_data_negative(name='?9dfg0&', animal_type='!8ddgjhifhk',
+                                     age=1006, pet_photo='images/cat1.jpg'):
     """Проверяем что можно добавить питомца"""
 
     # Получаем полный путь изображения питомца и сохраняем в переменную pet_photo
@@ -174,7 +174,7 @@ def test_successful_delete_self_pet_negative():
 
     # Проверяем - если список своих питомцев пустой, то добавляем нового и опять запрашиваем список своих питомцев
     if len(my_pets['pets']) == 0:
-        pf.add_new_pet(auth_key, "Суперкот", "кот", "3", "images/cat1.jpg")
+        pf.add_new_pet(auth_key, "Руслан", "Кот", "7", "images/cat1.jpg")
         _, my_pets = pf.get_list_of_pets(auth_key, "my_pets")
 
     # Берём id первого питомца из списка и отправляем запрос на удаление
@@ -189,7 +189,7 @@ def test_successful_delete_self_pet_negative():
     assert pet_id not in my_pets.values()
 
 
-def test_successful_update_self_pet_info_negative(name='Мурзик', animal_type='Котэ', age=123567):
+def test_successful_update_self_pet_info_negative(name='Крофт', animal_type='Кошка', age=17):
     """Проверяем возможность обновления информации о питомце"""
 
     # Получаем ключ auth_key и список своих питомцев
@@ -208,8 +208,8 @@ def test_successful_update_self_pet_info_negative(name='Мурзик', animal_ty
         raise Exception("There is no my pets")
 
 
-def test_add_new_pet_with_valid_data_negative_1(name='Kesha', animal_type='pingvin',
-                                     age=1456, pet_photo=''):
+def test_add_new_pet_with_valid_data_negative_1(name='Ken', animal_type='popugai',
+                                     age=16, pet_photo=''):
     """Проверяем что можно добавить питомца"""
 
     # Получаем полный путь изображения питомца и сохраняем в переменную pet_photo
@@ -225,8 +225,8 @@ def test_add_new_pet_with_valid_data_negative_1(name='Kesha', animal_type='pingv
     assert status == 200
     assert result['name'] == name
 
-def test_add_new_pet_with_valid_data_negative_2(name='pasha', animal_type='wolf',
-                                     age=32, pet_photo='images/cat1.jpg'):
+def test_add_new_pet_with_valid_data_negative_2(name='pankake', animal_type='wow',
+                                     age=1232, pet_photo='images/cat1.jpg'):
     """Проверяем что можно добавить питомца"""
 
     # Получаем полный путь изображения питомца и сохраняем в переменную pet_photo
@@ -242,8 +242,8 @@ def test_add_new_pet_with_valid_data_negative_2(name='pasha', animal_type='wolf'
     assert status == 200
     assert result['name'] == name
 
-def test_add_new_pet_with_valid_data_negative_3(name='fili', animal_type='rabbit',
-                                     age=2, pet_photo='images/cat1.jpg'):
+def test_add_new_pet_with_valid_data_negative_3(name='filipp', animal_type='zanoza',
+                                     age=1, pet_photo='images/cat1.jpg'):
     """Проверяем что можно добавить питомца"""
 
 
